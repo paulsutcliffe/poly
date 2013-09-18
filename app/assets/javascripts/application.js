@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
+//= require imsky-holder/holder.js
+
+Holder.add_theme("dark", {background:"#000", foreground:"#aaa", size:11, font: "Monaco"});

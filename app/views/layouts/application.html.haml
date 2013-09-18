@@ -18,35 +18,28 @@
     = javascript_include_tag "application"
 
 
-  %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand(href="#") Poly
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+  %body{id: bodyid, class: bodyclass}
+    %header#main-header
+      .container
+        .row
+          .span2
+            = link_to image_tag('logo.png'), '/', class: 'brand'
+          .span10
+            %nav.navbar
+              .navbar-inner
+                .container
+                  %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+                    %span.icon-bar
+                    %span.icon-bar
+                    %span.icon-bar
+                  .nav-collapse.collapse
+                    = render 'shared/social_links'
+                    = render 'layouts/menu'
 
-    .container
+    %section.container
+      = bootstrap_flash
+      = yield
 
-      .row
-        .span9
-          = bootstrap_flash
-          = yield
-        .span3
-          .well.sidebar-nav
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
     
-      %footer
+      %footer#main-footer
         %p &copy; Company 2013

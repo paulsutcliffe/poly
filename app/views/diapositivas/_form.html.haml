@@ -1,0 +1,19 @@
+= form_for @diapositiva, html: {multipart: true} do |f|
+  - if @diapositiva.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@diapositiva.errors.count, "error")} prohibited this diapositiva from being saved:"
+      %ul
+        - @diapositiva.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :titulo
+    = f.text_field :titulo
+  .field
+    = f.label :descripcion
+    = f.text_area :descripcion
+  .field
+    = f.label :imagen
+    = f.file_field :imagen
+  .actions
+    = f.submit 'Save'
