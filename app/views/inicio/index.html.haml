@@ -7,25 +7,34 @@
   .span9
     %ul.thumbnails.custom-thumbnails
       %li.span3
-        = link_to image_tag('holder.js/180x130/social'), '', class: 'thumbnail'
-        %h3 Nosotros
+        = link_to image_tag('holder.js/270x185/social'), '', class: 'thumbnail'
+        %h3.title Nosotros
+        %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+ 
+      %li.span3
+        = link_to image_tag('holder.js/270x185/social'), '', class: 'thumbnail'
+        %h3.title Productos
+        %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
     
       %li.span3
-        = link_to image_tag('holder.js/180x130/social'), '', class: 'thumbnail'
-        %h3 Productos
-        %p Somos una empresa que lidera en el mercado desde hace 25 años.
-    
-      %li.span3
-        = link_to image_tag('holder.js/180x130/social'), '', class: 'thumbnail'
-        %h3 Contacto
-        %p Somos una empresa que lidera en el mercado desde hace 25 años.
+        = link_to image_tag('holder.js/270x185/social'), '', class: 'thumbnail'
+        %h3.title Contacto
+        %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
   
   
   .span3
-    .well.sidebar-nav
-      %h3 Sidebar
+    .sidebar-nav
+      %h3.title Actualizaciones
       %ul.nav.nav-list
-        %li.nav-header Sidebar
-        %li= link_to "Link 1", "/path1"
-        %li= link_to "Link 2", "/path2"
-        %li= link_to "Link 3", "/path3"
+        -#
+          %li.nav-header 
+            %h3 Sidebar
+        %li
+          %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+
+        %li
+          %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+
+        %li
+          %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+

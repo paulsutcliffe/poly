@@ -21,6 +21,7 @@
   %body{id: bodyid, class: bodyclass}
     %header#main-header
       .container
+        = render 'layouts/pre_header'
         .row
           .span2
             = link_to image_tag('logo.png'), '/', class: 'brand'
@@ -36,10 +37,11 @@
                     = render 'shared/social_links'
                     = render 'layouts/menu'
 
-    %section.container
+    %section#main-content.container
       = bootstrap_flash
       = yield
 
     
       %footer#main-footer
-        %p &copy; Company 2013
+        .well
+          %p &copy; Company 2013

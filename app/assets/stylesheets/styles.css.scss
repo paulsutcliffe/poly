@@ -1,0 +1,53 @@
+@import 'mixins.css.scss';
+
+#main-content img {width: 100%}
+.thumbnail,
+a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
+
+
+#main-header {
+  #header-top {
+    #header-top-inner {background: $gray;}
+  }
+  nav {
+    .navbar-inner {
+      @extend .clear-navbar-inner;
+      .container {
+        height: 75px;
+        @include custom-border(heavy);
+      }
+    }
+  }
+}
+
+.social-links {
+  li {
+    @extend .custom-hover;
+  }
+}
+
+.title {
+  background: $gray; color: white; text-transform: uppercase; text-align: center;
+}
+
+#main-footer {
+  background: $gray;
+  p {text-align: center; color: white; margin: 0}
+}
+
+.row {margin-bottom: 10px}
+.well {background: none; border-radius: 0; border: 0; margin: 0}
+
+.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 30%;
+  .well {padding-left: 30px}
+  h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block;
+    .well {padding-right: 30px}
+  }
+  p {background: $gray-soft}
+}
+
+.btn {
+  &.btn-default {background: $blue; color: white; text-shadow: 0 0 0 transparent;
+    float: right; padding: 10px 30px; border: 0; border-radius: 0; text-transform: uppercase; font-weight: normal;
+  }
+}

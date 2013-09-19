@@ -19,8 +19,7 @@
 }
 
 .custom-thumbnails {
-  h3 {color: red; @extend .text-center;}
-
+  h3 {color: $gray; @extend .text-center; background: none}
 }
 
 @mixin custom-border($border-type) {
