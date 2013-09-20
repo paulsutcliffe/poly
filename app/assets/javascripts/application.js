@@ -10,9 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require holder
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require imsky-holder/holder.js
 
 Holder.add_theme("dark", {background:"#000", foreground:"#aaa", size:11, font: "Monaco"});
