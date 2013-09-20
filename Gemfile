@@ -33,6 +33,8 @@ gem "capistrano"
 # To use debugger
 # gem 'debugger'
 
+
+gem 'holder_rails'
 gem "rvm-capistrano"
 gem "haml"
 gem "haml-rails"
