@@ -2,6 +2,13 @@ module ApplicationHelper
 
 
 
+  def page_title(titulo)
+    "#{'<div class="row page-title-wrapper">
+        <div class="span12">
+          <h2>' + titulo + '</h2>
+        </div></div>'}".html_safe
+  end
+
 
 
   def holder_tag(size, text='', theme=nil, html_options={})

@@ -1,6 +1,15 @@
 @import 'mixins.css.scss';
 
-#main-content img {width: 100%}
+h1, h2, h3 {margin: 0; line-height: 100%}
+.link {font-size: $size-readable-bebas; margin: 0}
+p {font-size: $size-readable}
+
+
+#main-content {
+  img {width: 100%;
+  }
+  img.no-resp {width: auto}
+}
 .thumbnail,
 a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
@@ -8,6 +17,10 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 #main-header {
   #header-top {
     #header-top-inner {background: $gray;}
+    a {color: $gray2;}
+  }
+  .navbar {
+    margin: 0;
   }
   nav {
     .navbar-inner {
@@ -18,7 +31,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
         ul#main-nav {
           li {
             &.last {border-right: 0; a {border-right: 0}}
-            a {font-size: 25px; border-right: 1px solid $gray; margin: 0; padding-top: 0; padding-bottom: 0}
+            a {font-size: $size-menu; border-right: 1px solid $gray; margin: 0; padding-top: 0; padding-bottom: 0}
           }
         }
       }
@@ -44,7 +57,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 .row {margin-bottom: 10px}
 .well {background: none; border-radius: 0; border: 0; margin: 0}
 
-.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 30%;
+.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 5%;
   .well {padding-left: 30px}
   h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block;
     .well {padding-right: 30px}
@@ -53,7 +66,26 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 }
 
 .btn {
-  &.btn-default {background: $blue; color: white; text-shadow: 0 0 0 transparent;
+  &.btn-default {background: $blue; color: white; text-shadow: 0 0 0 transparent; font-size: $size-readable-bebas;
     float: right; padding: 10px 30px; border: 0; border-radius: 0; text-transform: uppercase; font-weight: normal;
+  }
+}
+
+.control-wrapper {height: 50px; position: relative; background: $gray;
+  .carousel-control {background: none; font-size: 90px; border: 0; color: white; opacity: 1}
+}
+
+.sidebar-nav {
+  h3.title {padding: 10px 0 8px}
+}
+
+.row {margin-bottom: 25px}
+.icon-fake {
+  width: 100px; height: 100px; background-color: $blue2; background-repeat: no-repeat; background-position: 50%; display: block;
+  .media-mision & {
+    background-image: $mision;
+  }
+  .media-vision & {
+    background-image: $vision;
   }
 }
