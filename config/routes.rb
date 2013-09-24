@@ -1,4 +1,6 @@
 Poly::Application.routes.draw do
+  get "productos/index"
+
   get "quienes_somos/index"
 
   resources :diapositivas

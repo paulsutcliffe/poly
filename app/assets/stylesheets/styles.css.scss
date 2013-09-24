@@ -41,7 +41,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 .social-links {
   li {
-    @extend .custom-hover;
+    @extend .custom-hover; margin-left: 20px;
   }
 }
 
@@ -66,8 +66,12 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 }
 
 .btn {
-  &.btn-default {background: $blue; color: white; text-shadow: 0 0 0 transparent; font-size: $size-readable-bebas;
+  &.btn-default {background: $blue2; color: white; text-shadow: 0 0 0 transparent; font-size: $size-readable-bebas;
     float: right; padding: 10px 30px; border: 0; border-radius: 0; text-transform: uppercase; font-weight: normal;
+    &.back {float: left; position: relative; margin-left: 40px;
+      &:before {content: "<"; background: $gray; @include size(40px, 40px); text-align: center; @include absolute(right, top, 100%, 0);
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 40px; line-height: 80%}
+    }
   }
 }
 
@@ -87,5 +91,8 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   }
   .media-vision & {
     background-image: $vision;
+  }
+  .textil & {
+    background-image: $textil; @include size(200px, 200px);
   }
 }
