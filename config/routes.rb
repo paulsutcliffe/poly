@@ -5,6 +5,8 @@ Poly::Application.routes.draw do
 
   resources :diapositivas
 
+  match 'ejemplo' => 'quienes_somos#ejemplo'
+
 
   root to: 'inicio#index'
 

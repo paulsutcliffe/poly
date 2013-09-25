@@ -1,0 +1,14 @@
+
+
+= page_title('Poner nombre de la página')
+
+= page_encabezado('Subtítulo', 'imagen_src')
+%p Texto descriptivo
+= page_encabezado_end
+
+
+-#
+  @iteracion.each do |iterado|
+  - iterado.nombre
+  = admin_links('btn-small', 'Editar', edit_link, 'Eliminar', delete_link)
+
