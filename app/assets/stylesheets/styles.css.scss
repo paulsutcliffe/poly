@@ -72,6 +72,8 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
       &:before {content: "<"; background: $gray; @include size(40px, 40px); text-align: center; @include absolute(right, top, 100%, 0);
       font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 40px; line-height: 80%}
     }
+
+    &.btn-left {float: none; margin-bottom: 15px}
   }
 }
 
@@ -96,3 +98,14 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
     background-image: $textil; @include size(200px, 200px);
   }
 }
+
+.actions,
+.admin-links-top {
+  margin-bottom: 20px; float: left; clear: left; width: 100%;
+  .btn.btn-default {float: left}
+}
+
+textarea {width: 98% !important}
+input[type="file"] {margin-bottom: 10px}
+
+

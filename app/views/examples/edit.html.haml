@@ -1,0 +1,14 @@
+= page_title(raw('Editar <b>' + @example.title + '</b>'))
+
+
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+    = link_to 'Ir al índice', examples_path, class: 'btn btn-default btn-left'
+    = link_to 'Mostrar', @example, class: 'btn btn-default'
+    = render 'form'
+
+
+

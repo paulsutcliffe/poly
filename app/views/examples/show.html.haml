@@ -1,0 +1,18 @@
+= page_title(@example.title)
+
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+    = link_to 'Ir al índice', examples_path, class: 'btn btn-default btn-left'
+
+    - if current_admin
+      = link_to 'Editar', edit_example_path(@example), class: 'btn btn-default'
+.row
+  .span6
+    = @example.title
+  .span6
+    %b Description:
+    = @example.description
+

@@ -16,3 +16,14 @@
 //= require imsky-holder/holder.js
 
 Holder.add_theme("dark", {background:"#000", foreground:"#aaa", size:11, font: "Monaco"});
+
+
+$(document).ready(function() {
+   $('.back-js').click(function(){
+      window.history.back(-1);
+      return false;
+   })
+
+});
+
+

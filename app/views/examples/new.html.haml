@@ -1,0 +1,9 @@
+= page_title('Crear ' + params[:controller].parameterize.singularize)
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+    = link_to 'Ir al índice', examples_path, class: 'btn btn-default btn-left'
+    = render 'form'
+

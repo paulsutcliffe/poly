@@ -1,0 +1,23 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'New Example', new_example_path, class: 'btn btn-default'
+
+= page_title('Poner nombre de la página')
+
+= page_encabezado('Subtítulo', 'imagen_src')
+%p Texto descriptivo
+= page_encabezado_end
+
+
+.row
+  .span12
+    - @examples.each do |example|
+      .media-title
+        %h2
+          = example.title
+      .media-body
+        = example.description
+      = admin_links('btn-small', I18n.t('editar'), edit_example_path(example), I18n.t('borrar'), example.to_s)
+
+
+

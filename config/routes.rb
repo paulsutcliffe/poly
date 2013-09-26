@@ -1,4 +1,9 @@
 Poly::Application.routes.draw do
+  devise_for :admins
+
+  resources :examples
+
+
   get "productos/index"
 
   get "quienes_somos/index"

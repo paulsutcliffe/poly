@@ -1,0 +1,24 @@
+= form_for @example do |f|
+  - if @example.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@example.errors.count, "error")} prohibited this example from being saved:"
+      %ul
+        - @example.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    .span3
+      .field
+        = f.label :title
+        = f.text_field :title
+    .span9
+      .field
+        = f.label :description
+        = f.text_area :description, rows: 10, cols: 25
+      .field
+        = f.label :slug, 'Otro input'
+        = f.text_field :slug
+      .field
+        = f.label :slug, 'Otro input'
+        = f.file_field :slug
+      .actions
+        = f.submit 'Guardar', class: 'btn btn-default'
