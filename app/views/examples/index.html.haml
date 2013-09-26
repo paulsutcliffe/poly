@@ -18,7 +18,8 @@
       .media-body
         = example.description
       = admin_links('btn-small', I18n.t('editar'), edit_example_path(example), I18n.t('borrar'), example.to_s)
-      = link_to 'Destroy', example, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'tricky-destroy'
+      - if current_admin
+        = link_to 'Destroy', example, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'tricky-destroy'
 
 
 
