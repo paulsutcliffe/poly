@@ -24,6 +24,12 @@ $(document).ready(function() {
       return false;
    })
 
+  $('.tricky-destroy').each(function() {
+    my_href = $(this).attr('href');
+    $(this).prev().find('.link-destroy').find('a').attr('href', my_href);
+  
+  });
+
 });
 
 

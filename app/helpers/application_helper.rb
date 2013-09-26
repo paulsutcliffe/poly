@@ -70,7 +70,7 @@ module ApplicationHelper
       <a class="btn btn-primary dropdown-toggle ' + size_link +'" data-toggle="dropdown" href="#"><span class="caret"></span></a>
       <ul class="dropdown-menu">
       <li><a href="' + edit_link + '"><i class="icon-pencil"></i> ' + edit_text +'</a></li>
-      <li><a href="' + delete_link + '" rel="nofollow" data-method="delete" data-confirm="¿Estás seguro?"
+      <li class="link-destroy"><a href="' + delete_link + '" rel="nofollow" data-method="delete" data-confirm="¿Estás seguro?"
 ><i class="icon-trash"></i> ' + delete_text + '</a></li>
       </ul>
       </div>'}".html_safe
