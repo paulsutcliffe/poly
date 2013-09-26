@@ -31,6 +31,11 @@ $(document).ready(function() {
   
   });
 
+
+  if (window.history.length == 1) {
+    document.getElementsByClassName('back-js')[0].style.display = 'none'
+  } 
+
 });
 
 
