@@ -19,6 +19,7 @@ Holder.add_theme("dark", {background:"#000", foreground:"#aaa", size:11, font: "
 
 
 $(document).ready(function() {
+   document.getElementsByClassName('back-js')[0].removeAttribute('href');
    $('.back-js').click(function(){
       window.history.back(-1);
       return false;
