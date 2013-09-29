@@ -24,11 +24,11 @@
 
 @mixin custom-border($border-type) {
     @if $border-type == 'soft' {
-      border-bottom: $border-soft solid $gray;
+      border-bottom: $border-soft solid $gray3;
     } @else if $border-type == 'normal' {
-      border-bottom: $border-normal solid $gray;
+      border-bottom: $border-normal solid $gray3;
     } @else if $border-type == 'heavy' {
-      border-bottom: $border-heavy solid $gray;
+      border-bottom: $border-heavy solid $gray3;
     }
 }
 

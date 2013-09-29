@@ -1,13 +1,14 @@
 $blue:                         #7486af;
 $gray:                         #575757;
 $gray2:                        #a6a5a5;
+$gray3:                        #868585;
 $gray-soft:                    lighten($gray, 10%);
 $blue:                         #7486af;
 $blue2:                        #7486af;
 
 $border-soft:                  2px;
-$border-normal:                10px;
-$border-heavy:                 20px;
+$border-normal:                7px;
+$border-heavy:                 14px;
 
 $mision: url(ico-mision.png);
 $vision: url(ico-vision.png);
@@ -20,4 +21,10 @@ $size-1: 12px;
 $size-1: 12px;
 $size-readable: 14px;
 $size-readable-bebas: 20px;
-$size-menu: 25px;
+$size-menu: 18px;
+
+
+// paddings
+$menu_link_padding:             0 20px;
+$menu_link_padding_first:       10px;
+$menu_link_padding_last:        0;

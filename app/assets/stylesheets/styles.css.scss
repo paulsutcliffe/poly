@@ -29,9 +29,13 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
         height: 75px;
         @include custom-border(normal);
         ul#main-nav {
+          margin-top: 8px;
           li {
-            &.last {border-right: 0; a {border-right: 0}}
-            a {font-size: $size-menu; border-right: 1px solid $gray; margin: 0; padding-top: 0; padding-bottom: 0}
+            &.first {a {padding-left: $menu_link_padding_first;}}
+            &.last {border-right: 0; a {border-right: 0; padding-right: $menu_link_padding_last}}
+            a {font-size: $size-menu; border-right: 1px solid $gray; margin: 0; padding: $menu_link_padding;
+              img {position: relative; top: -4px; margin-right: 4px}
+            }
           }
         }
       }
@@ -39,11 +43,20 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   }
 }
 
+.encabezado-links {
+  a {padding: 0 12px 0 10px; border-right: 1px solid $gray2;
+  }
+
+}
+
 .social-links {
-  li {
+  height: 40px; 
+  li {display: none;
     @extend .custom-hover; margin-left: 20px;
   }
 }
+
+
 
 .title {
   background: $gray; color: white; text-transform: uppercase; text-align: center;
@@ -58,7 +71,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 .well {background: none; border-radius: 0; border: 0; margin: 0}
 
 .carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 5%;
-  .well {padding-left: 30px}
+  .well {padding-left: 30px; padding-right: 20px}
   h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block;
     .well {padding-right: 30px}
   }
