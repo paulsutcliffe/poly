@@ -37,7 +37,6 @@ gem "capistrano"
 gem 'holder_rails'
 gem "rvm-capistrano"
 gem "haml"
-gem "haml-rails"
 gem "will_paginate"
 gem "inherited_resources"
 gem "page_title_helper"
