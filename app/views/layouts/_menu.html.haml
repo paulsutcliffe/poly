@@ -1,14 +1,14 @@
 .separate-row.clearfix
   %ul#main-nav.nav.pull-left
     %li.first
-      = link_to image_tag('ico-home.png') + ' Inicio', '/'
-  
+      = link_to image_tag('ico-home.png') + ' Inicio', root_path
+
     %li
-      = link_to 'Nosotros', '/'
-  
+      = link_to 'Nosotros', quienes_somos_index_path
+
     %li
-      = link_to 'Productos', '/'
-  
+      = link_to 'Productos', productos_index_path
+
     %li.last
-      = link_to 'Contacto', '/'
+      = link_to 'Contacto', new_contacto_path
 
