@@ -1,0 +1,51 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Contacto', new_contacto_path, class: 'btn btn-default'
+
+= page_title('contactos')
+%p Texto descriptivo
+= page_encabezado_end
+
+.row
+  .span12
+    - @contactos.each do |contacto|
+      .media-title
+        %h2
+          Nombre
+      .media-body
+        = contacto.nombre
+      .media-title
+        %h2
+          Apellido
+      .media-body
+        = contacto.apellido
+      .media-title
+        %h2
+          Empresa
+      .media-body
+        = contacto.empresa
+      .media-title
+        %h2
+          Telefono
+      .media-body
+        = contacto.telefono
+      .media-title
+        %h2
+          Email
+      .media-body
+        = contacto.email
+      .media-title
+        %h2
+          Direccion
+      .media-body
+        = contacto.direccion
+      .media-title
+        %h2
+          Mensaje
+      .media-body
+        = contacto.mensaje
+      .actions
+        = link_to 'Ver', contacto, class: 'btn btn-default'
+        - if current_admin
+          = link_to 'Editar', edit_contacto_path(contacto), class: 'btn btn-default'
+          = link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'

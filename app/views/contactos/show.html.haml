@@ -1,0 +1,25 @@
+= page_title('contacto')
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+
+    - if current_admin
+      = link_to 'Editar', edit_contacto_path(@contacto), class: 'btn btn-default'
+.row
+  .span6
+    %b Nombre:
+    = @contacto.nombre
+    %b Apellido:
+    = @contacto.apellido
+    %b Empresa:
+    = @contacto.empresa
+    %b Telefono:
+    = @contacto.telefono
+    %b Email:
+    = @contacto.email
+    %b Direccion:
+    = @contacto.direccion
+    %b Mensaje:
+    = @contacto.mensaje
