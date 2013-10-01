@@ -3,5 +3,41 @@
 .row
   .span12
 
-    = link_to 'Cancelar', '', class: 'btn btn-default btn-left back-js'
+    %h3.title-box
+      Déjanos un mensaje
     = render 'form'
+
+.row
+  .span12
+    %h3.title-box
+      Información
+  .span11.offset1
+    .row
+      .span4
+        .media
+          .pull-left
+            = image_tag ('ico-arrowsign.jpg')
+          .media-content
+            .media-title.upper
+              Dirección
+            .media-body
+              Cajamarquilla 1126 Zárate - Lima 36 Perú
+      .span4
+        .media
+          .pull-left
+            = image_tag ('ico-phone.jpg')
+          .media-content
+            .media-title.upper
+              teléfono
+            .media-body
+              715 - 8020
+ 
+      .span3
+        .media
+          .pull-left
+            = image_tag ('ico-print.jpg')
+          .media-content
+            .media-title.upper
+              Fax
+            .media-body
+              376 - 1371

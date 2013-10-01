@@ -6,27 +6,32 @@
         - @contacto.errors.full_messages.each do |msg|
           %li= msg
   .row
-    .span3
+    .span4
       .field
         = f.label :nombre
         = f.text_field :nombre
       .field
         = f.label :apellido
         = f.text_field :apellido
+
+    .span4
       .field
         = f.label :empresa
         = f.text_field :empresa
       .field
         = f.label :telefono
         = f.text_field :telefono
+    .span4
       .field
         = f.label :email
         = f.text_field :email
       .field
         = f.label :direccion
         = f.text_field :direccion
+  .row
+    .span12
       .field
         = f.label :mensaje
         = f.text_area :mensaje
       .actions
-        = f.submit 'Guardar', class: 'btn btn-default'
+        = f.submit 'Enviar', class: 'btn btn-default pull-right'

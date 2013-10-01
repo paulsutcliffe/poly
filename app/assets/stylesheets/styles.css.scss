@@ -1,9 +1,13 @@
 @import 'mixins.css.scss';
 
 h1, h2, h3 {margin: 0; line-height: 100%}
-.link {font-size: $size-readable-bebas; margin: 0}
+.link, .upper {font-size: $size-readable-bebas; margin: 0}
 p {font-size: $size-readable}
 
+.media {
+  * {color: $gray}
+  .media-title {margin-top: 5px}
+}
 
 #main-content {
   img {width: 100%;
@@ -122,3 +126,17 @@ textarea {width: 98% !important}
 input[type="file"] {margin-bottom: 10px}
 
 .tricky-destroy {display: none}
+
+.title-box {@extend .btn;
+@extend .btn-default;
+@extend .btn-left;
+margin-bottom: 30px !important;
+@include inline-block;
+}
+
+#contactos {
+  form .row {margin-bottom: 0}
+  input[type="text"] {width: 95%}
+  textarea {height: 100px; min-height: 100px; resize: vertical}
+  .actions .btn {float: right; margin-right: 6px}
+}
