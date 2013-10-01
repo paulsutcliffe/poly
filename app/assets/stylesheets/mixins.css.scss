@@ -20,6 +20,10 @@
 
 .custom-thumbnails {
   h3 {color: $gray; @extend .text-center; background: none}
+  &.alterno {
+    h3 {color: $gray; text-align: left !important; background: none}
+    p {text-align: left}
+  }
 }
 
 @mixin custom-border($border-type) {

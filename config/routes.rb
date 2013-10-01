@@ -1,4 +1,6 @@
 Poly::Application.routes.draw do
+  get "gomas/index"
+
   resources :contactos
 
 

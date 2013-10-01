@@ -94,6 +94,8 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   }
 }
 
+#bottom-area .btn {float:left !important}
+
 .control-wrapper {height: 50px; position: relative; background: $gray;
   .carousel-control {background: none; font-size: 90px; border: 0; color: white; opacity: 1}
 }
@@ -119,8 +121,11 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 .actions,
 .admin-links-top {
   margin-bottom: 20px; float: left; clear: left; width: 100%;
-  .btn.btn-default {float: left}
+  .btn.btn-default {float: left;
+  }
+  
 }
+.btn.btn-default.btn-back {float: left !important; margin-top: 8px; background: $gray}
 
 textarea {width: 98% !important}
 input[type="file"] {margin-bottom: 10px}
@@ -132,6 +137,8 @@ input[type="file"] {margin-bottom: 10px}
 @extend .btn-left;
 margin-bottom: 30px !important;
 @include inline-block;
+
+  .well {color: white; box-shadow: none}
 }
 
 #contactos {
@@ -139,4 +146,10 @@ margin-bottom: 30px !important;
   input[type="text"] {width: 95%}
   textarea {height: 100px; min-height: 100px; resize: vertical}
   .actions .btn {float: right; margin-right: 6px}
+}
+
+
+.img-wrapper {
+  position: relative;
+  .btn-ver-mas {@include absolute(left, bottom, 0, 0); background: $gray; color: white; border: 0}
 }
