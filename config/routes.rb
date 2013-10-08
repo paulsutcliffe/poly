@@ -1,25 +1,25 @@
 Poly::Application.routes.draw do
-  get "gomas/index"
 
-  resources :contactos
+  scope(path_names: { new: 'nuevo', edit: 'editar' }) do
 
+    resources :categorias do
+      resources :subcategorias do
+        resources :tipos do
+          resources :productos
+        end
+      end
+    end
 
-  devise_for :admins, :path => "cms", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
+    resources :contactos
 
-  resources :examples
+    devise_for :admins, :path => "cms", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
 
+    match "/quienes-somos" => "quienes_somos#index", :as => 'quienes_somos', :via => :get
 
-  get "productos/index"
+    resources :diapositivas
 
-  get "quienes_somos/index"
-
-  resources :diapositivas
-
-  match 'ejemplo' => 'quienes_somos#ejemplo'
-
-
-  root to: 'inicio#index'
-
-  get "inicio/index"
+    root to: 'inicio#index'
 
   end
+
+end

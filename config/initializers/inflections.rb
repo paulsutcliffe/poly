@@ -7,6 +7,11 @@ ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.singular /^(ox)en/i, '\1'
   inflect.irregular 'diapositiva', 'diapositivas'
   inflect.irregular 'error', 'errores'
+  inflect.irregular 'categoria', 'categorias'
+  inflect.irregular 'subcategoria', 'subcategorias'
+  inflect.irregular 'tipo', 'tipos'
+  inflect.irregular 'vendedor', 'vendedores'
+  inflect.irregular 'coleccion', 'colecciones'
 #   inflect.uncountable %w( fish sheep )
 end
 #

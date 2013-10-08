@@ -1,0 +1,17 @@
+= page_title('tipo')
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+
+    - if current_admin
+      = link_to 'Editar', edit_tipo_path(@tipo), class: 'btn btn-default'
+.row
+  .span6
+    %b Nombre:
+    = @tipo.nombre
+    %b Descripcion:
+    = @tipo.descripcion
+    %b Imagen:
+    = @tipo.imagen

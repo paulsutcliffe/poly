@@ -1,0 +1,20 @@
+= form_for @tipo do |f|
+  - if @tipo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@tipo.errors.count, "error")} en tipo"
+      %ul
+        - @tipo.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    .span3
+      .field
+        = f.label :nombre
+        = f.text_field :nombre
+      .field
+        = f.label :descripcion
+        = f.text_area :descripcion
+      .field
+        = f.label :imagen
+        = f.text_field :imagen
+      .actions
+        = f.submit 'Guardar', class: 'btn btn-default'

@@ -1,4 +1,2 @@
-class ProductosController < ApplicationController
-  def index
-  end
+class ProductosController < InheritedResources::Base
 end

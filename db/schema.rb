@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930232834) do
+ActiveRecord::Schema.define(:version => 20131008174646) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(:version => 20130930232834) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+
+  create_table "categorias", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.string   "imagen"
+    t.string   "slug"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "contactos", :force => true do |t|
     t.string   "nombre"
@@ -58,6 +67,36 @@ ActiveRecord::Schema.define(:version => 20130930232834) do
     t.string   "slug"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "productos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "imagen"
+    t.string   "slug"
+    t.integer  "tipo_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subcategorias", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.string   "imagen"
+    t.string   "icono"
+    t.string   "slug"
+    t.integer  "categoria_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "tipos", :force => true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.string   "imagen"
+    t.string   "slug"
+    t.integer  "subcategoria_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

@@ -1,0 +1,31 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Categoria', new_categoria_path, class: 'btn btn-default'
+
+= page_title('categorias')
+%p Texto descriptivo
+= page_encabezado_end
+
+.row
+  .span12
+    - @categorias.each do |categoria|
+      .media-title
+        %h2
+          Nombre
+      .media-body
+        = categoria.nombre
+      .media-title
+        %h2
+          Descripcion
+      .media-body
+        = categoria.descripcion
+      .media-title
+        %h2
+          Imagen
+      .media-body
+        = categoria.imagen
+      .actions
+        = link_to 'Ver', categoria, class: 'btn btn-default'
+        - if current_admin
+          = link_to 'Editar', edit_categoria_path(categoria), class: 'btn btn-default'
+          = link_to 'Eliminar', categoria, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
