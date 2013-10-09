@@ -41,15 +41,23 @@ class ImagenUploader < CarrierWave::Uploader::Base
   end
 
   version :span3 do
-    process :resize_to_fill => [220,195]
+    process :resize_to_fill => [270,195]
+  end
+
+  version :span3_rect do
+    process :resize_to_fill => [270,100]
   end
 
   version :span4 do
-    process :resize_to_fill => [300,300]
+    process :resize_to_fill => [370,300]
+  end
+
+  version :span5 do
+    process :resize_to_fill => [470,260]
   end
 
   version :span6 do
-    process :resize_to_fill => [460,260]
+    process :resize_to_fill => [570,260]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

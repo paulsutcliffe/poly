@@ -1,27 +1,23 @@
 #main-carrusel.carousel-projects.slide
-  -#
-    %ol.carousel-indicators
-      - @diapositivas.each_with_index do |diapositiva, index|
-        - if index == 0
-          %li{:"data-target" => "#main-carrusel", :"data-slide-to" => index.to_s, :class => 'active'}
-            = index.to_s
-        - else
-          %li{:"data-target" => "#main-carrusel", :"data-slide-to" => index.to_s}
-            = index.to_s
+ 
+  %ol.carousel-indicators
+    - @diapositivas.each_with_index do |diapositiva, index|
+      - if index == 0
+        %li{:"data-target" => "#main-carrusel", :"data-slide-to" => index.to_s, :class => 'active span2 first-thumb'}
+          = image_tag diapositiva.imagen_url(:thumb)
+      - else
+        %li{:"data-target" => "#main-carrusel", :"data-slide-to" => index.to_s, :class => 'span2'}
+          = image_tag diapositiva.imagen_url(:thumb)
 
   <!-- Carousel items -->
   .carousel-inner
-    .item.active
-      = image_tag('/assets/1170x320.png')
-      .carousel-caption.span4
-        %h3.well.well-small
-          Botones
-        %p.well.well-small
-          Bla bla blafsf sdfsf sfsafsf sfsadf asfsafs
-        = link_to 'Ver Más', '', class: 'btn btn-default'
-    .item
-      = image_tag('/assets/1170x320.png')
-      .carousel-caption
+    - @diapositivas.each_with_index do |diapositiva, index|
+      - if index == 0
+        .item.active
+          = image_tag diapositiva.imagen_url(:full)
+      - else
+        .item
+          = image_tag diapositiva.imagen_url(:full)
 
   <!-- Carousel nav -->
   .control-wrapper

@@ -47,10 +47,21 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   }
 }
 
+
 .encabezado-links {
   a {padding: 0 12px 0 10px; border-right: 1px solid $gray2;
+    &.last {border-right: 0; padding-right: 0}
   }
 
+}
+
+.first-thumb {margin-left: 50px !important}
+
+.carousel-projects {position: relative;
+  .carousel-indicators {
+    @include absolute(left, top, auto, 87%); right: auto;
+    li {width: 170px; text-indent: 0; cursor: pointer; margin-left: 0; margin-right: 10px}
+  }
 }
 
 .social-links {
@@ -65,6 +76,9 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 .title {
   background: $gray; color: white; text-transform: uppercase; text-align: center;
 }
+
+.title-block {color: $gray; a {color: $gray}}
+
 
 #main-footer {
   background: $gray;
@@ -96,7 +110,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 #bottom-area .btn {float:left !important}
 
-.control-wrapper {height: 50px; position: relative; background: $gray;
+.control-wrapper {height: 58px; position: relative; background: $gray;
   .carousel-control {background: none; font-size: 90px; border: 0; color: white; opacity: 1}
 }
 
@@ -152,4 +166,8 @@ margin-bottom: 30px !important;
 .img-wrapper {
   position: relative;
   .btn-ver-mas {@include absolute(left, bottom, 0, 0); background: $gray; color: white; border: 0}
+}
+
+.sidebar-nav {
+  iframe {width: 100% !important}
 }

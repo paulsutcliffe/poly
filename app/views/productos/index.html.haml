@@ -3,24 +3,20 @@
     = link_to 'Nuevo  Producto', new_producto_path, class: 'btn btn-default'
 
 = page_title('productos')
+= page_encabezado('subtitulo', 'imagen')
 %p Texto descriptivo
 = page_encabezado_end
 
-.row
-  .span12
-    - @productos.each do |producto|
-      .media-title
-        %h2
-          Nombre
-      .media-body
-        = producto.nombre
-      .media-title
-        %h2
-          Imagen
-      .media-body
-        = producto.imagen
-      .actions
-        = link_to 'Ver', producto, class: 'btn btn-default'
-        - if current_admin
-          = link_to 'Editar', edit_producto_path(producto), class: 'btn btn-default'
-          = link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
+- @productos.each_slice(3) do |producto|
+  .row
+    - producto.each do |producto|
+      .span4
+        = link_to image_tag(producto.imagen_url(:span4))
+        .well
+          %h3.title-block
+            = producto.nombre
+          .actions
+            = link_to 'Ver', producto, class: 'btn btn-default'
+            - if current_admin
+              = link_to 'Editar', edit_producto_path(producto), class: 'btn btn-default'
+              = link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'

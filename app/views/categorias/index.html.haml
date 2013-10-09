@@ -3,29 +3,24 @@
     = link_to 'Nuevo  Categoria', new_categoria_path, class: 'btn btn-default'
 
 = page_title('categorias')
+= page_encabezado('subtitulo', 'imagen')
 %p Texto descriptivo
 = page_encabezado_end
 
-.row
-  .span12
-    - @categorias.each do |categoria|
-      .media-title
-        %h2
-          Nombre
-      .media-body
-        = categoria.nombre
-      .media-title
-        %h2
-          Descripcion
-      .media-body
-        = categoria.descripcion
-      .media-title
-        %h2
-          Imagen
-      .media-body
-        = categoria.imagen
-      .actions
-        = link_to 'Ver', categoria, class: 'btn btn-default'
-        - if current_admin
-          = link_to 'Editar', edit_categoria_path(categoria), class: 'btn btn-default'
-          = link_to 'Eliminar', categoria, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
+- @categorias.each_slice(2) do |categoria|
+  .row
+    - categoria.each do |categoria|
+      .span6
+        = link_to image_tag(categoria.imagen_url(:span6)), categoria
+        .well
+          %h3.title-block
+            = link_to categoria.nombre, categoria
+          %p
+            = categoria.descripcion
+
+
+          .actions
+            = link_to 'Ver', categoria, class: 'btn btn-default'
+            - if current_admin
+              = link_to 'Editar', edit_categoria_path(categoria), class: 'btn btn-default'
+              = link_to 'Eliminar', categoria, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
