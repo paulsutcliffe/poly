@@ -14,8 +14,8 @@
         - if current_admin
           .well
             .actions
-              = link_to 'Editar', edit_producto_path(producto), class: 'btn btn-default'
-              = link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
+              = link_to 'Editar', edit_tipo_producto_path(@tipo, producto), class: 'btn btn-default'
+              = link_to 'Eliminar', tipo_producto_path(@tipo), :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
 
         %div{id: 'myModal-' + index.to_s, class: 'modal hide fade', tabindex: '-1', role: 'dialog', :"aria-labelledby" => 'myModalLabel', :"aria-hidden" => 'true'}
           .modal-header
