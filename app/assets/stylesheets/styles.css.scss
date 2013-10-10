@@ -1,6 +1,11 @@
 @import 'mixins.css.scss';
 
 h1, h2, h3 {margin: 0; line-height: 100%}
+h2 {
+  &.media-heading {
+    font-size: $size-2;
+  }
+}
 .link, .upper {font-size: $size-readable-bebas; margin: 0}
 p {font-size: $size-readable}
 
@@ -9,10 +14,25 @@ p {font-size: $size-readable}
   .media-title {margin-top: 5px}
 }
 
+
+.btn {text-shadow: none; border: 0; border-radius: 0; box-shadow: 0 0 0 transparent}
+.btn-view-more {background: $lupa; background-repeat: no-repeat; background-position: 0 0; background-color: $blue; color: white;
+padding: 0 5px 0 20px; text-transform: uppercase; font-size: $size-4; line-height: 120%;
+  &:hover, &:active {color: white; text-decoration: none; background-position: 0 0; background-color: $blue }
+
+
+}
+
+  .img-wrapper {
+    position: relative;
+    .btn-view-more {@include absolute(right, bottom, 0, 5px)}
+  }
+
 #main-content {
   img {width: 100%;
   }
   img.no-resp {width: auto}
+  .well img {width: auto}
 }
 .thumbnail,
 a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
@@ -77,7 +97,14 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   background: $gray; color: white; text-transform: uppercase; text-align: center;
 }
 
-.title-block {color: $gray; a {color: $gray}}
+.title-block {
+  color: $gray; 
+  a {color: $gray}
+  &.colored {
+    background: $blue; color: white; padding-top: 10px; padding-bottom: 10px;
+    a {color: white}
+  }
+}
 
 
 #main-footer {

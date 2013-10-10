@@ -3,7 +3,7 @@
     = link_to 'Nuevo  Subcategoria', new_subcategoria_path, class: 'btn btn-default'
 
 = page_title('subcategorias')
-= page_encabezado('subtitulo', 'imagen')
+= page_encabezado('subtitulo', 'box-subcat.jpg')
 %p Texto descriptivo
 = page_encabezado_end
 
@@ -11,16 +11,18 @@
   .row
     - subcategoria.each do |subcategoria|
       %div{class: cycle('span5', 'span5 offset1')}
+        .img-wrapper
+          = image_tag(subcategoria.imagen_url(:span5)) 
+          = link_to 'Ver más', subcategoria, class: 'btn btn-view-more'
 
-        = link_to image_tag(subcategoria.imagen_url(:span5)), subcategoria
+        %h3.title-block.colored.well
+          = link_to subcategoria.nombre, subcategoria
         .well
-          %h3.title-block
-            = subcategoria.nombre
-          
           = paragraph(subcategoria.descripcion)
-          = subcategoria.icono
-          .actions
-            = link_to 'Ver', subcategoria, class: 'btn btn-default'
-            - if current_admin
+          
+          =# link_to image_tag(subcategoria.icono), '', class: 'btn-view-more'
+      
+          - if current_admin
+            .actions
               = link_to 'Editar', edit_subcategoria_path(subcategoria), class: 'btn btn-default'
               = link_to 'Eliminar', subcategoria, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
