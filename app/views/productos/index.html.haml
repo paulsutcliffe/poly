@@ -2,18 +2,17 @@
   .admin-links-top
     = link_to 'Nuevo  Producto', new_producto_path, class: 'btn btn-default'
 
-= page_title('productos')
-= #page_encabezado('subtitulo', 'imagen')
-//%p Texto descriptivo
-= #page_encabezado_end
+= page_title(@tipo.nombre)
 
 - @productos.each_slice(3) do |producto|
   .row
     - producto.each_with_index do |producto, index|
       .span4
         = link_to image_tag(producto.imagen_url(:span4)), '#', :"data-toggle" => "modal", :"data-target" => "#myModal-" + index.to_s
-        .well
-          - if current_admin
+        %h3.title-block.colored.well
+          = paragraph(producto.nombre)
+        - if current_admin
+          .well
             .actions
               = link_to 'Editar', edit_producto_path(producto), class: 'btn btn-default'
               = link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
@@ -22,12 +21,9 @@
           .modal-header
             %button{:type => 'button', class: 'close', :"data-dismiss" => 'modal', :"aria-hidden" => 'true'}
               x
-            %h3{id: 'myModalLabel-' + index.to_s }
-              = producto.nombre
             .modal-body
-              = image_tag(producto.imagen_url(:span4))
+              = image_tag(producto.imagen_url(:full))
             .modal-footer
-            %button{:class => 'btn', :"data-dismiss" => 'modal', :"aria-hidden" => 'true'}
-              Cerrar
+              = producto.nombre
 
- 
+

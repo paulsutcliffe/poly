@@ -59,7 +59,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
           li {
             &.first {a {padding-left: $menu_link_padding_first;}}
             &.last {border-right: 0; a {border-right: 0; padding-right: $menu_link_padding_last}}
-            a {font-size: $size-menu; border-right: 1px solid $gray; margin: 0; padding: $menu_link_padding;
+            a {font-size: $size-menu; border-right: 1px solid $gray2; margin: 0; padding: $menu_link_padding;
               img {position: relative; top: -4px; margin-right: 4px}
             }
           }
@@ -172,6 +172,8 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 textarea {width: 98% !important}
 input[type="file"] {margin-bottom: 10px}
+input[type="text"] { @include cajita-input;  }
+textarea { @include cajita-input;  }
 
 .tricky-destroy {display: none}
 
@@ -191,6 +193,9 @@ margin-bottom: 30px !important;
   .actions .btn {float: right; margin-right: 6px}
 }
 
+.info {
+  .media { background: $gray-light;}
+}
 
 .img-wrapper {
   position: relative;
@@ -226,4 +231,12 @@ p, .media-body {background: $gray-light; }
 
 }
 
-.menu-bg {background: $gray-light; position: relative; top: 5px}
+.menu-bg {background: $gray-light; position: relative; top: -10px; padding-bottom: 5px; padding-top:10px;}
+
+#main-content h3.title-block.cat-title { background: none; margin-bottom: 20px; font-size: $size-2;}
+#main-content h3.title-block { background: $blue; height: 5px; padding: 5px 0 5px 10px; font-size: 18px }
+
+#tipos .page-encabezado .media {background:none;}
+#tipos .page-encabezado .media .media-body .well {padding: 0;}
+.page-encabezado .media .media-body .well {padding: 40px;}
+

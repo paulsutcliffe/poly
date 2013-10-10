@@ -1,7 +1,17 @@
 @import 'bootstrap_and_overrides.css.scss';
 @import 'variables.css.scss';
 
-
+@mixin cajita-input { box-shadow: none;
+                     border-radius: 0;
+                     margin-bottom: 30px;
+                     height: 35px;
+                     border-width: 4px;
+                     border-left-style: none;
+                     border-right-style: none;
+                     border-top-style: none;
+                     border-bottom-style: solid;
+                     background: $gray-light;
+                   }
 
 @mixin encabezado {
   color: white;

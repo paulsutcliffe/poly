@@ -2,7 +2,7 @@
   .admin-links-top
     = link_to 'Nuevo  Tipo', new_tipo_path, class: 'btn btn-default'
 
-= page_title('tipos')
+= page_title(@subcategoria.nombre)
 = page_encabezado('subtitulo', 'imagen')
 %p Texto descriptivo
 = page_encabezado_end
@@ -13,12 +13,12 @@
       .span3
         .img-wrapper
           = image_tag(tipo.imagen_url(:span3_rect))
-          = link_to 'Ver más', tipo, class: 'btn btn-view-more'
+          = link_to 'Ver más', tipo_productos_path(tipo), class: 'btn btn-view-more'
         %h3.title-block.colored.well
-          = link_to tipo.nombre, tipo
+          = link_to tipo.nombre, tipo_productos_path(tipo)
         .well
           = paragraph(tipo.descripcion)
-       
+
           - if current_admin
             .actions
               = link_to 'Editar', edit_tipo_path(tipo), class: 'btn btn-default'
