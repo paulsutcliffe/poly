@@ -1,6 +1,6 @@
 - if current_admin
   .admin-links-top
-    = link_to 'Nuevo  Subcategoria', new_subcategoria_path, class: 'btn btn-default'
+    = link_to 'Nuevo  Subcategoria', new_categoria_subcategoria_path(@categoria), class: 'btn btn-default'
 
 = page_title(@categoria.nombre)
 = page_encabezado('subtitulo', 'box-subcat.jpg')
