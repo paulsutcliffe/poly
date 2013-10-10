@@ -11,13 +11,15 @@
   .row
     - tipo.each do |tipo|
       .span3
-        = link_to image_tag(tipo.imagen_url(:span3_rect)), tipo
+        .img-wrapper
+          = image_tag(tipo.imagen_url(:span3_rect))
+          = link_to 'Ver más', tipo, class: 'btn btn-view-more'
+        %h3.title-block.colored.well
+          = link_to tipo.nombre, tipo
         .well
-          %h3.title-block
-            = tipo.nombre
           = paragraph(tipo.descripcion)
-          .actions
-            = link_to 'Ver', tipo, class: 'btn btn-default'
-            - if current_admin
+       
+          - if current_admin
+            .actions
               = link_to 'Editar', edit_tipo_path(tipo), class: 'btn btn-default'
               = link_to 'Eliminar', tipo, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'

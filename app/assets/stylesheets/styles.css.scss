@@ -198,3 +198,18 @@ margin-bottom: 30px !important;
 .sidebar-nav {
   iframe {width: 100% !important}
 }
+
+#tipos {
+  .page-encabezado {
+  .pull-left {img{display: none}}
+
+  .media-heading {
+    background: $blue; color: white;
+  }
+
+  .media-heading, p {@include inline-block; padding:  20px}
+
+  }
+}
+
+.page-encabezado p {background: $gray}

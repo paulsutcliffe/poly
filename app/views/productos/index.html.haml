@@ -3,20 +3,31 @@
     = link_to 'Nuevo  Producto', new_producto_path, class: 'btn btn-default'
 
 = page_title('productos')
-= page_encabezado('subtitulo', 'imagen')
-%p Texto descriptivo
-= page_encabezado_end
+= #page_encabezado('subtitulo', 'imagen')
+//%p Texto descriptivo
+= #page_encabezado_end
 
 - @productos.each_slice(3) do |producto|
   .row
-    - producto.each do |producto|
+    - producto.each_with_index do |producto, index|
       .span4
-        = link_to image_tag(producto.imagen_url(:span4))
+        = link_to image_tag(producto.imagen_url(:span4)), '#', :"data-toggle" => "modal", :"data-target" => "#myModal-" + index.to_s
         .well
-          %h3.title-block
-            = producto.nombre
-          .actions
-            = link_to 'Ver', producto, class: 'btn btn-default'
-            - if current_admin
+          - if current_admin
+            .actions
               = link_to 'Editar', edit_producto_path(producto), class: 'btn btn-default'
               = link_to 'Eliminar', producto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
+
+        %div{id: 'myModal-' + index.to_s, class: 'modal hide fade', tabindex: '-1', role: 'dialog', :"aria-labelledby" => 'myModalLabel', :"aria-hidden" => 'true'}
+          .modal-header
+            %button{:type => 'button', class: 'close', :"data-dismiss" => 'modal', :"aria-hidden" => 'true'}
+              x
+            %h3{id: 'myModalLabel-' + index.to_s }
+              = producto.nombre
+            .modal-body
+              = image_tag(producto.imagen_url(:span4))
+            .modal-footer
+            %button{:class => 'btn', :"data-dismiss" => 'modal', :"aria-hidden" => 'true'}
+              Cerrar
+
+ 
