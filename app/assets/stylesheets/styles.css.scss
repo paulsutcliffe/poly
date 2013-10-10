@@ -32,6 +32,8 @@ padding: 0 5px 0 20px; text-transform: uppercase; font-size: $size-4; line-heigh
   img {width: 100%;
   }
   img.no-resp {width: auto}
+  .well { background: $gray-light;}
+   h3.title-block { background: $blue;}
   .well img {width: auto}
 }
 .thumbnail,
@@ -85,7 +87,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 }
 
 .social-links {
-  height: 40px; 
+  height: 40px;
   li {display: none;
     @extend .custom-hover; margin-left: 20px;
   }
@@ -98,7 +100,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 }
 
 .title-block {
-  color: $gray; 
+  color: $gray;
   a {color: $gray}
   &.colored {
     background: $blue; color: white; padding-top: 10px; padding-bottom: 10px;
@@ -108,7 +110,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 
 #main-footer {
-  background: $gray;
+  .well {background: $gray;}
   p {text-align: center; color: white; margin: 0}
 }
 
@@ -164,7 +166,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   margin-bottom: 20px; float: left; clear: left; width: 100%;
   .btn.btn-default {float: left;
   }
-  
+
 }
 .btn.btn-default.btn-back {float: left !important; margin-top: 8px; background: $gray}
 
@@ -213,15 +215,15 @@ margin-bottom: 30px !important;
 }
 
 .page-encabezado {
- 
-p, .media-body {background: #ddd; }
+
+p, .media-body {background: $gray-light; }
 
 }
 
 .page-encabezado {
- 
- .media {background: #ddd; min-height: 159px }
+
+ .media {background: $gray-light; min-height: 159px }
 
 }
 
-.menu-bg {background: #ddd; position: relative; top: 5px}
+.menu-bg {background: $gray-light; position: relative; top: 5px}
