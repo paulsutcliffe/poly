@@ -45,9 +45,9 @@ gem "devise"
 gem "mini_magick"
 gem "carrierwave"
 gem "nifty-generators"
-gem "ffaker", :group => :test
+gem "ffaker"
 gem "capybara", "~> 2.0.2", :group => :test
-gem "database_cleaner", "~> 0.9.1", :group => :test
-gem "launchy", "~> 2.2.0", :group => :test
-gem "rspec-rails", "~> 2.13.0", :group => [:test, :development]
-gem "factory_girl_rails", "~> 4.2.1", :group => [:test, :development]
+gem "database_cleaner", "~> 0.9.1"
+gem "launchy", "~> 2.2.0"
+gem "rspec-rails", "~> 2.13.0"
+gem "factory_girl_rails", "~> 4.2.1"
