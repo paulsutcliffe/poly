@@ -204,12 +204,12 @@ margin-bottom: 30px !important;
   .pull-left {img{display: none}}
 
   .media-heading {
-    background: $blue; color: white;
+    background: $blue; color: white; float: left; margin-right: 20px;
   }
 
-  .media-heading, p {@include inline-block; padding:  20px}
+  .media-heading, p {padding:  20px; min-height: 30px}
 
   }
 }
 
-.page-encabezado p {background: $gray}
+.page-encabezado p {background: #ddd; }
