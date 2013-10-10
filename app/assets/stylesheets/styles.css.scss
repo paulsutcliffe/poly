@@ -208,8 +208,18 @@ margin-bottom: 30px !important;
   }
 
   .media-heading, p {padding:  20px; min-height: 30px}
-
+  .media-body {background: none}
   }
 }
 
-.page-encabezado p {background: #ddd; }
+.page-encabezado {
+ 
+p, .media-body {background: #ddd; }
+
+}
+
+.page-encabezado {
+ 
+ .media-body {background: #ddd; min-height: 159px }
+
+}
