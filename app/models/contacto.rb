@@ -1,6 +1,5 @@
-class Contacto < ActiveRecord::Base
-  include MailForm::Delivery
-  attr_accessible :apellido, :direccion, :email, :empresa, :mensaje, :nombre, :telefono
+class Contacto < MailForm::Base
+  #attr_accessible :apellido, :direccion, :email, :empresa, :mensaje, :nombre, :telefono
 
   attribute :nombre,    :validate => true
   attribute :apellido,  :validate => true
