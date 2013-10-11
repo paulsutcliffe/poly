@@ -2,12 +2,16 @@ Poly::Application.routes.draw do
 
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
 
-    resources :categorias, :shallow => true do
-      resources :subcategorias, :shallow => true do
-        resources :tipos, :shallow => true do
-          resources :productos
-        end
-      end
+    resources :categorias do
+      resources :subcategorias
+    end
+
+    resources :subcategorias do
+      resources :tipos
+    end
+
+    resources :tipos do
+      resources :productos
     end
 
     resources :contactos

@@ -2,7 +2,7 @@ class Tipo < ActiveRecord::Base
   attr_accessible :descripcion, :imagen, :nombre
 
   belongs_to :subcategoria
-  has_many :productos
+  has_many :productos, :dependent => :destroy
 
   extend FriendlyId
   friendly_id :nombre, use: :slugged
