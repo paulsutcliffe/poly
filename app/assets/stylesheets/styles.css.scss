@@ -56,18 +56,28 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
         @include custom-border(normal);
         ul#main-nav {
           margin-top: 8px;
-          li {
-            &.first {a {padding-left: $menu_link_padding_first;}}
-            &.last {border-right: 0; a {border-right: 0; padding-right: $menu_link_padding_last}}
-            a {font-size: $size-menu; border-right: 1px solid $gray2; margin: 0; padding: $menu_link_padding;
-              img {position: relative; top: -4px; margin-right: 4px}
+          li {position: relative; height: 24px;
+            &.first {a, span {padding-left: $menu_link_padding_first;}}
+            &.last {border-right: 0; a {border-right: 0;}}
+            a, span {
+              font-size: $size-menu; border-right: 1px solid $gray2; margin: 0; padding: $menu_link_padding;
+              .on {display: none}
+              .off {@include inline-block;}
             }
+            a:hover,
+            span {color: $blue3}
+            img {position: relative; top: -6px; margin-right: 4px}
           }
         }
       }
     }
   }
 }
+
+#main-nav li a:hover .off {display: none !important}
+#main-nav li a:hover .on {display: inline-block !important; *display: inline !important; *zoom: 1; vertical-align: top}
+#main-nav li a:hover:after,
+#main-nav li span:after {width: 100%; height: 5px; @include absolute(left, bottom, 0, -10px); content: ""; background: $blue3}
 
 
 .encabezado-links {
@@ -88,8 +98,11 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 .social-links {
   height: 40px;
-  li {display: none;
+  li {
     @extend .custom-hover; margin-left: 20px;
+    a {width: 30px; height: 30px; text-align: center; padding: 0 !important; 
+      img {position: relative; top: 10px}  
+    }
   }
 }
 
@@ -117,12 +130,12 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 .row {margin-bottom: 10px}
 .well {background: none; border-radius: 0; border: 0; margin: 0}
 
-.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 5%;
+.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 5%; width: 30%;
   .well {padding-left: 30px; padding-right: 20px}
-  h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block;
+  h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block; padding: 10px 15px 10px 40px;
     .well {padding-right: 30px}
   }
-  p {background: $gray-soft}
+  p {background: $gray-soft; padding: 10px 15px 10px 40px}
 }
 
 .btn {
@@ -239,4 +252,6 @@ p, .media-body {background: $gray-light; }
 #tipos .page-encabezado .media {background:none;}
 #tipos .page-encabezado .media .media-body .well {padding: 0;}
 .page-encabezado .media .media-body .well {padding: 40px;}
+
+
 

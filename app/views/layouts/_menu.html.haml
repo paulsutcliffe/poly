@@ -1,14 +1,18 @@
 .separate-row.clearfix.menu-bg
   %ul#main-nav.nav.pull-left
     %li.first
-      = link_to image_tag('ico-home.png') + ' Inicio', root_path
+      = link_to_unless_current image_tag('ico-home-off.png', class: 'off') + image_tag('ico-home-on.png', class: 'on') + ' Inicio', root_path do
+        = image_tag('ico-home-on.png') + raw('<span>Inicio</span>')
 
     %li
-      = link_to 'Nosotros', quienes_somos_path
-
+      = link_to_unless_current 'Nosotros', quienes_somos_path do
+        %span
+          Nosotros
     %li
-      = link_to 'Productos', categorias_path
-
+      = link_to_unless_current 'Productos', categorias_path do
+        %span
+          Productos
     %li.last
-      = link_to 'Contacto', new_contacto_path
-
+      = link_to_unless_current 'Contacto', new_contacto_path do
+        %span
+          Contacto
