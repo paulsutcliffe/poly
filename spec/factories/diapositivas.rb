@@ -5,6 +5,6 @@ FactoryGirl.define do
     titulo { Faker::Name.name }
     descripcion { Faker::Lorem.paragraph }
     imagen { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'images', 'diapositiva.jpg')) }
-    link { Faker::Name.name }
+    link { Faker::Internet.url }
   end
 end

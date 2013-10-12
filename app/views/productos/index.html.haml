@@ -2,7 +2,7 @@
   .admin-links-top
     = link_to 'Nuevo  Producto', new_tipo_producto_path(@tipo), class: 'btn btn-default'
 
-= page_title(@tipo.nombre)
+= page_title('Productos | ' + @tipo.subcategoria.categoria.nombre + ' | ' + @tipo.subcategoria.nombre + ' | ' + @tipo.nombre)
 
 - @productos.each_slice(3) do |producto|
   .row

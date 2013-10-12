@@ -2,9 +2,9 @@
   .admin-links-top
     = link_to 'Nuevo  Tipo', new_subcategoria_tipo_path(@subcategoria), class: 'btn btn-default'
 
-= page_title(@subcategoria.nombre)
-= page_encabezado('subtitulo', 'imagen')
-%p Texto descriptivo
+= page_title('Productos | ' + @subcategoria.categoria.nombre + ' | ' + @subcategoria.nombre)
+= page_encabezado(@subcategoria.nombre, 'imagen')
+%p= @subcategoria.descripcion
 = page_encabezado_end
 
 - @tipos.each_slice(4) do |tipo|

@@ -1,0 +1,8 @@
+= image_tag diapositiva.imagen_url(:full)
+.carousel-caption
+  %h3
+    = diapositiva.titulo
+  %p.descripcion
+    = diapositiva.descripcion
+  - if diapositiva.link?
+    = link_to 'Ver más', diapositiva.link, class: 'btn btn-default'

@@ -2,9 +2,9 @@
   .admin-links-top
     = link_to 'Nuevo  Subcategoria', new_categoria_subcategoria_path(@categoria), class: 'btn btn-default'
 
-= page_title(@categoria.nombre)
-= page_encabezado('subtitulo', 'box-subcat.jpg')
-%p Texto descriptivo
+= page_title('Productos | ' + @categoria.nombre)
+= page_encabezado(@categoria.nombre, @categoria.icono_url(:thumb))
+%p= @categoria.descripcion
 = page_encabezado_end
 
 - @subcategorias.each_slice(2) do |subcategoria|

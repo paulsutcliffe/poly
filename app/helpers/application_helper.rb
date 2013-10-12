@@ -46,7 +46,7 @@ module ApplicationHelper
           <div class="span12">
             <div class="media">
               <div class="pull-left">
-                <img src="/assets/' + imagen + '" />
+                <img src="' + imagen + '" />
               </div>
               <div class="media-body">
                 <div class="well">

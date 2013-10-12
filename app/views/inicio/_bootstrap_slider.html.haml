@@ -1,5 +1,5 @@
 #main-carrusel.carousel-projects.slide
- 
+
   %ol.carousel-indicators
     - @diapositivas.each_with_index do |diapositiva, index|
       - if index == 0
@@ -14,52 +14,12 @@
     - @diapositivas.each_with_index do |diapositiva, index|
       - if index == 0
         .item.active
-          .carousel-caption
-            %h3
-              = diapositiva.titulo
-            %p.descripcion
-              = diapositiva.descripcion
-            - if diapositiva.link?
-              = link_to 'Ver más', diapositiva.link, class: 'btn btn-default'
-          = image_tag diapositiva.imagen_url(:full)
+          = render 'slide', :diapositiva => diapositiva
       - else
         .item
-          = image_tag diapositiva.imagen_url(:full)
+          = render 'slide', :diapositiva => diapositiva
 
   <!-- Carousel nav -->
   .control-wrapper
     = link_to raw('&lsaquo;'), '#main-carrusel', :"data-slide" => 'prev', :class => 'carousel-control left'
     = link_to raw('&rsaquo;'), '#main-carrusel', :"data-slide" => 'next', :class => 'carousel-control right'
-
-
-
--#
-  #projects-carrusel.carousel-projects.slide
-    %ol.carousel-indicators
-      - @diapositivas.each_with_index do |diapositiva, index|
-        - if index == 0
-          %li{:"data-target" => "#projects-carrusel", :"data-slide-to" => index.to_s, :class => 'active'}
-            = index.to_s
-        - else
-          %li{:"data-target" => "#projects-carrusel", :"data-slide-to" => index.to_s}
-            = index.to_s
-
-    <!-- Carousel items -->
-    .carousel-inner
-      - @diapositivas.each_with_index do |diapositiva, index|
-        - if index == 0
-          .item.active
-            = image_tag diapositiva.imagen_url(:regular)
-        - else
-          .item
-            = image_tag diapositiva.imagen_url(:regular)
-
-
-
-  <!-- Carousel nav -->
-  -#
-    = link_to raw('&lsaquo;'), '#la-bodega-carrusel', :"data-slide" => 'prev', :class => 'carousel-control left'
-    = link_to raw('&rsaquo;'), '#la-bodega-carrusel', :"data-slide" => 'next', :class => 'carousel-control right'
-
-
-
