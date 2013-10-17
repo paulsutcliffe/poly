@@ -57,7 +57,11 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
         ul#main-nav {
           margin-top: 8px;
           li {position: relative; height: 24px;
-            &.first {a, span {padding-left: $menu_link_padding_first;}}
+            &.first {
+              a {padding-left: 0}
+              span {padding-left: $menu_link_padding_first;}
+              img {margin-right: $menu_link_padding_first; }
+            }
             &.last {border-right: 0; a {border-right: 0;}}
             a, span {
               font-size: $size-menu; border-right: 1px solid $gray2; margin: 0; padding: $menu_link_padding;
@@ -183,12 +187,16 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 }
 .btn.btn-default.btn-back {float: left !important; margin-top: 8px; background: $gray}
 
+form {overflow: hidden}
 textarea {width: 98% !important}
 input[type="file"] {margin-bottom: 10px}
-input[type="text"] { @include cajita-input;  }
+input[type="text"], input[type="password"], input[type="email"] { @include cajita-input;  }
 textarea { @include cajita-input;  }
+input[type="submit"] {@extend .btn; @extend .btn-default; float: left }
 
 .tricky-destroy {display: none}
+
+
 
 .title-box {@extend .btn;
 @extend .btn-default;
