@@ -60,7 +60,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
             &.first {
               a {padding-left: 0}
               span {padding-left: $menu_link_padding_first;}
-              img {margin-right: $menu_link_padding_first; }
+              img {margin-left: 10px;}
             }
             &.last {border-right: 0; a {border-right: 0;}}
             a, span {
@@ -70,7 +70,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
             }
             a:hover,
             span {color: $blue3}
-            img {position: relative; top: -6px; margin-right: 4px}
+            img {position: relative; top: -3px; margin-right: 4px}
           }
         }
       }
@@ -104,8 +104,8 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   height: 40px;
   li {
     @extend .custom-hover; margin-left: 20px;
-    a {width: 30px; height: 30px; text-align: center; padding: 0 !important; 
-      img {position: relative; top: 10px}  
+    a {width: 30px; height: 30px; text-align: center; padding: 0 !important;
+      img {position: relative; top: 10px}
     }
   }
 }
