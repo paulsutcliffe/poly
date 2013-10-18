@@ -1,53 +1,29 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Producto', new_tipo_producto_path(@tipo), class: 'btn btn-default'
 
-= page_title('Productos | Textiles')
-.row.textil 
-  .span12
-    .media
-      .pull-left
-        .icon-fake
-      
-      .media-body
-        .well
-          %h4.media-heading
-            NUESTRA TRASCENDENCIA EN EL MERCADO
-          %p
-            Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        
-          %p
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore dolore magnm aliquam quaerat voluptatem. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est.
-  
-  
+= page_title('Productos | ' + @tipo.subcategoria.categoria.nombre + ' | ' + @tipo.subcategoria.nombre + ' | ' + @tipo.nombre)
 
-.row
-  .span12
-    %ul.thumbnails
-      %li.span3
-        = link_to holder_tag '270x185/industrial', '', class: 'thumbnail'
-        .well
-          %h3 Nosotros
-          %p Somos una empresa que lidera en el mercado desde hace 25 años.
+- @productos.each_slice(3) do |producto|
+  .row
+    - producto.each_with_index do |producto, index|
+      .span4
+        = link_to image_tag(producto.imagen_url(:span4)), '#', :"data-toggle" => "modal", :"data-target" => "#myModal-" + index.to_s
+        %h3.title-block.colored.well
+          = paragraph(producto.nombre)
+        - if current_admin
+          .well
+            .actions
+              = link_to 'Editar', edit_tipo_producto_path(@tipo, producto), class: 'btn btn-default'
+              = link_to 'Eliminar', tipo_producto_path(@tipo, producto), :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
 
-      %li.span3
-        = link_to holder_tag '270x185/industrial', '', class: 'thumbnail'
-        .well
-          %h3 Productos
-          %p Somos una empresa que lidera en el mercado desde hace 25 años.
+        %div{id: 'myModal-' + index.to_s, class: 'modal hide fade', tabindex: '-1', role: 'dialog', :"aria-labelledby" => 'myModalLabel', :"aria-hidden" => 'true'}
+          .modal-header
+            %button{:type => 'button', class: 'close', :"data-dismiss" => 'modal', :"aria-hidden" => 'true'}
+              x
+            .modal-body
+              = image_tag(producto.imagen_url(:full))
+            .modal-footer
+              = producto.nombre
 
-      %li.span3
-        = link_to holder_tag '270x185/industrial', '', class: 'thumbnail'
-        .well
-          %h3 Contacto
-          %p Somos una empresa que lidera en el mercado desde hace 25 años.
-    
 
-      %li.span3
-        = link_to holder_tag '270x185/industrial', '', class: 'thumbnail'
-        .well
-          %h3 Contacto
-          %p Somos una empresa que lidera en el mercado desde hace 25 años.
-    
-   
-
-.row
-  .span12
-    = link_to 'Productos', '', class: 'btn btn-default back'

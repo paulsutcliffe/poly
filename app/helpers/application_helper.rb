@@ -16,7 +16,7 @@ module ApplicationHelper
   def page_title(titulo)
     "#{'<div class="row page-title-wrapper">
         <div class="span12">
-          <h2>' + titulo + '</h2>
+          <h1>' + titulo + '</h1>
         </div></div>'}".html_safe
   end
 
@@ -50,7 +50,7 @@ module ApplicationHelper
               </div>
               <div class="media-body">
                 <div class="well">
-                  <h4 class="media-heading">' + subtitulo +'</h4>'}".html_safe
+                  <h2 class="media-heading">' + subtitulo +'</h2>'}".html_safe
 
 
   end

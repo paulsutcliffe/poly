@@ -1,0 +1,25 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Categoria', new_categoria_path, class: 'btn btn-default'
+
+= page_title('Productos')
+= page_encabezado('Calidad y Eficiencia', '/assets/box-productos.jpg')
+%p Texto descriptivo
+= page_encabezado_end
+
+- @categorias.each_slice(2) do |categoria|
+  .row
+    - categoria.each do |categoria|
+      .span6
+        = link_to image_tag(categoria.imagen_url(:span6)), categoria_subcategorias_path(categoria)
+        .well
+          %h3.title-block.cat-title
+            = link_to categoria.nombre, categoria_subcategorias_path(categoria)
+          %p
+            = categoria.descripcion
+
+
+          .actions
+            - if current_admin
+              = link_to 'Editar', edit_categoria_path(categoria), class: 'btn btn-default'
+              = link_to 'Eliminar', categoria, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'

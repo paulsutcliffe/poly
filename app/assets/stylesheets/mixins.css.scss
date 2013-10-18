@@ -1,7 +1,17 @@
 @import 'bootstrap_and_overrides.css.scss';
 @import 'variables.css.scss';
 
-
+@mixin cajita-input { box-shadow: none;
+                     border-radius: 0;
+                     margin-bottom: 30px;
+                     height: 35px;
+                     border-width: 4px;
+                     border-left-style: none;
+                     border-right-style: none;
+                     border-top-style: none;
+                     border-bottom-style: solid;
+                     background: $gray-light;
+                   }
 
 @mixin encabezado {
   color: white;
@@ -19,7 +29,9 @@
 }
 
 .custom-thumbnails {
-  h3 {color: $gray; @extend .text-center; background: none}
+  li {background: $gray-light;}
+  img {margin-bottom: 20px}
+  h3 {color: $gray; @extend .text-center; background: none; margin-bottom: 10px}
   &.alterno {
     h3 {color: $gray; text-align: left !important; background: none}
     p {text-align: left}

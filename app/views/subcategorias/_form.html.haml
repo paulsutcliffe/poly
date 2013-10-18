@@ -1,0 +1,20 @@
+= form_for [@subcategoria.categoria, @subcategoria], html: {multipart: true} do |f|
+  - if @subcategoria.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@subcategoria.errors.count, "error")} en subcategoria"
+      %ul
+        - @subcategoria.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    .span3
+      .field
+        = f.label :nombre
+        = f.text_field :nombre
+      .field
+        = f.label :descripcion
+        = f.text_area :descripcion
+      .field
+        = f.label :imagen
+        = f.file_field :imagen
+      .actions
+        = f.submit 'Guardar', class: 'btn btn-default'

@@ -1,0 +1,25 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Tipo', new_subcategoria_tipo_path(@subcategoria), class: 'btn btn-default'
+
+= page_title('Productos | ' + @subcategoria.categoria.nombre + ' | ' + @subcategoria.nombre)
+= page_encabezado(@subcategoria.nombre, 'imagen')
+%p= @subcategoria.descripcion
+= page_encabezado_end
+
+- @tipos.each_slice(4) do |tipo|
+  .row
+    - tipo.each do |tipo|
+      .span3
+        .img-wrapper
+          = image_tag(tipo.imagen_url(:span3_rect))
+          = link_to 'Ver más', tipo_productos_path(tipo), class: 'btn btn-view-more'
+        %h3.title-block.colored.well
+          = link_to tipo.nombre, tipo_productos_path(tipo)
+        .well
+          = paragraph(tipo.descripcion)
+
+          - if current_admin
+            .actions
+              = link_to 'Editar', edit_subcategoria_tipo_path(@subcategoria, tipo), class: 'btn btn-default'
+              = link_to 'Eliminar', subcategoria_tipo_path(@subcategoria, tipo), :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'

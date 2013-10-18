@@ -9,5 +9,13 @@ DatabaseCleaner.clean
 FactoryGirl.create :admin
 
 6.times do
-  FactoryGirl.create :siete
+  FactoryGirl.create :producto
+end
+
+6.times do
+  FactoryGirl.create :contacto
+end
+
+3.times do
+  FactoryGirl.create :diapositiva
 end

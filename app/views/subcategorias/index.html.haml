@@ -1,0 +1,28 @@
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Subcategoria', new_categoria_subcategoria_path(@categoria), class: 'btn btn-default'
+
+= page_title('Productos | ' + @categoria.nombre)
+= page_encabezado(@categoria.nombre, @categoria.icono_url(:thumb))
+%p= @categoria.descripcion
+= page_encabezado_end
+
+- @subcategorias.each_slice(2) do |subcategoria|
+  .row
+    - subcategoria.each do |subcategoria|
+      %div{class: cycle('span5', 'span5 offset1')}
+        .img-wrapper
+          = image_tag(subcategoria.imagen_url(:span5))
+          = link_to 'Ver más', subcategoria_tipos_path(subcategoria), class: 'btn btn-view-more'
+
+        %h3.title-block.colored.well.subcat
+          = link_to subcategoria.nombre, subcategoria_tipos_path(subcategoria)
+        .well
+          = paragraph(subcategoria.descripcion)
+
+          =# link_to image_tag(subcategoria.icono), '', class: 'btn-view-more'
+
+          - if current_admin
+            .actions
+              = link_to 'Editar', edit_categoria_subcategoria_path(@categoria, subcategoria), class: 'btn btn-default'
+              = link_to 'Eliminar', categoria_subcategoria_path(@categoria, subcategoria), :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'

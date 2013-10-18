@@ -1,0 +1,17 @@
+= page_title('categoria')
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+
+    - if current_admin
+      = link_to 'Editar', edit_categoria_path(@categoria), class: 'btn btn-default'
+.row
+  .span6
+    %b Nombre:
+    = @categoria.nombre
+    %b Descripcion:
+    = @categoria.descripcion
+    %b Imagen:
+    = @categoria.imagen

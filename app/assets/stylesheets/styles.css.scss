@@ -1,6 +1,11 @@
 @import 'mixins.css.scss';
 
 h1, h2, h3 {margin: 0; line-height: 100%}
+h2 {
+  &.media-heading {
+    font-size: $size-2;
+  }
+}
 .link, .upper {font-size: $size-readable-bebas; margin: 0}
 p {font-size: $size-readable}
 
@@ -9,10 +14,27 @@ p {font-size: $size-readable}
   .media-title {margin-top: 5px}
 }
 
+
+.btn {text-shadow: none; border: 0; border-radius: 0; box-shadow: 0 0 0 transparent}
+.btn-view-more {background: $lupa; background-repeat: no-repeat; background-position: 0 0; background-color: $blue; color: white;
+padding: 0 5px 0 20px; text-transform: uppercase; font-size: $size-4; line-height: 120%;
+  &:hover, &:active {color: white; text-decoration: none; background-position: 0 0; background-color: $blue }
+
+
+}
+
+  .img-wrapper {
+    position: relative;
+    .btn-view-more {@include absolute(right, bottom, 0, 5px)}
+  }
+
 #main-content {
   img {width: 100%;
   }
   img.no-resp {width: auto}
+  .well { background: $gray-light;}
+   h3.title-block { background: $blue;}
+  .well img {width: auto}
 }
 .thumbnail,
 a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
@@ -34,12 +56,21 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
         @include custom-border(normal);
         ul#main-nav {
           margin-top: 8px;
-          li {
-            &.first {a {padding-left: $menu_link_padding_first;}}
-            &.last {border-right: 0; a {border-right: 0; padding-right: $menu_link_padding_last}}
-            a {font-size: $size-menu; border-right: 1px solid $gray; margin: 0; padding: $menu_link_padding;
-              img {position: relative; top: -4px; margin-right: 4px}
+          li {position: relative; height: 24px;
+            &.first {
+              a {padding-left: 0}
+              span {padding-left: $menu_link_padding_first;}
+              img {margin-right: $menu_link_padding_first; }
             }
+            &.last {border-right: 0; a {border-right: 0;}}
+            a, span {
+              font-size: $size-menu; border-right: 1px solid $gray2; margin: 0; padding: $menu_link_padding;
+              .on {display: none}
+              .off {@include inline-block;}
+            }
+            a:hover,
+            span {color: $blue3}
+            img {position: relative; top: -6px; margin-right: 4px}
           }
         }
       }
@@ -47,16 +78,35 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   }
 }
 
+#main-nav li a:hover .off {display: none !important}
+#main-nav li a:hover .on {display: inline-block !important; *display: inline !important; *zoom: 1; vertical-align: top}
+#main-nav li a:hover:after,
+#main-nav li span:after {width: 100%; height: 5px; @include absolute(left, bottom, 0, -10px); content: ""; background: $blue3}
+
+
 .encabezado-links {
   a {padding: 0 12px 0 10px; border-right: 1px solid $gray2;
+    &.last {border-right: 0; padding-right: 0}
   }
 
 }
 
+.first-thumb {margin-left: 50px !important}
+
+.carousel-projects {position: relative;
+  .carousel-indicators {
+    @include absolute(left, top, auto, 87%); right: auto;
+    li {width: 170px; text-indent: 0; cursor: pointer; margin-left: 0; margin-right: 10px}
+  }
+}
+
 .social-links {
-  height: 40px; 
-  li {display: none;
+  height: 40px;
+  li {
     @extend .custom-hover; margin-left: 20px;
+    a {width: 30px; height: 30px; text-align: center; padding: 0 !important; 
+      img {position: relative; top: 10px}  
+    }
   }
 }
 
@@ -66,20 +116,30 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   background: $gray; color: white; text-transform: uppercase; text-align: center;
 }
 
+.title-block {
+  color: $gray;
+  a {color: $gray}
+  &.colored {
+    background: $blue; color: white; padding-top: 10px; padding-bottom: 10px;
+    a {color: white}
+  }
+}
+
+
 #main-footer {
-  background: $gray;
+  .well {background: $gray;}
   p {text-align: center; color: white; margin: 0}
 }
 
 .row {margin-bottom: 10px}
 .well {background: none; border-radius: 0; border: 0; margin: 0}
 
-.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 5%;
+.carousel-caption {margin-left: 0; padding-left: 0; background: none; bottom: 5%; width: 30%;
   .well {padding-left: 30px; padding-right: 20px}
-  h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block;
+  h3 {background: $gray; text-transform: uppercase; color: white; @include inline-block; padding: 10px 15px 10px 40px;
     .well {padding-right: 30px}
   }
-  p {background: $gray-soft}
+  p {background: $gray-soft; padding: 10px 15px 10px 40px}
 }
 
 .btn {
@@ -96,7 +156,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 #bottom-area .btn {float:left !important}
 
-.control-wrapper {height: 50px; position: relative; background: $gray;
+.control-wrapper {height: 58px; position: relative; background: $gray;
   .carousel-control {background: none; font-size: 90px; border: 0; color: white; opacity: 1}
 }
 
@@ -123,14 +183,20 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
   margin-bottom: 20px; float: left; clear: left; width: 100%;
   .btn.btn-default {float: left;
   }
-  
+
 }
 .btn.btn-default.btn-back {float: left !important; margin-top: 8px; background: $gray}
 
+form {overflow: hidden}
 textarea {width: 98% !important}
 input[type="file"] {margin-bottom: 10px}
+input[type="text"], input[type="password"], input[type="email"] { @include cajita-input;  }
+textarea { @include cajita-input;  }
+input[type="submit"] {@extend .btn; @extend .btn-default; float: left }
 
 .tricky-destroy {display: none}
+
+
 
 .title-box {@extend .btn;
 @extend .btn-default;
@@ -148,8 +214,52 @@ margin-bottom: 30px !important;
   .actions .btn {float: right; margin-right: 6px}
 }
 
+.info {
+  .media { background: $gray-light;}
+}
 
 .img-wrapper {
   position: relative;
   .btn-ver-mas {@include absolute(left, bottom, 0, 0); background: $gray; color: white; border: 0}
 }
+
+.sidebar-nav {
+  iframe {width: 100% !important}
+}
+
+#tipos {
+  .page-encabezado {
+  .pull-left {img{display: none}}
+
+  .media-heading {
+    background: $blue; color: white; float: left; margin-right: 20px;
+  }
+
+  .media-heading, p {padding:  20px; min-height: 30px}
+  .media-body {background: none}
+  }
+}
+
+.page-encabezado {
+
+p, .media-body {background: $gray-light; }
+
+}
+
+.page-encabezado {
+
+ .media {background: $gray-light; min-height: 159px }
+
+}
+
+.menu-bg {background: $gray-light; position: relative; top: -10px; padding-bottom: 5px; padding-top:10px;}
+
+#main-content h3.title-block.cat-title { background: none; margin-bottom: 20px; font-size: $size-2;}
+#main-content h3.title-block { background: $blue; height: 5px; padding: 5px 0 5px 10px; font-size: 18px }
+
+#tipos .page-encabezado .media {background:none;}
+#tipos .page-encabezado .media .media-body .well {padding: 0;}
+.page-encabezado .media .media-body .well {padding: 40px;}
+
+
+
