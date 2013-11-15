@@ -32,7 +32,7 @@ gem "capistrano"
 
 # To use debugger
 # gem 'debugger'
-
+gem 'unicorn-worker-killer'
 gem "mail_form"
 gem "holder_rails"
 gem "rvm-capistrano"
