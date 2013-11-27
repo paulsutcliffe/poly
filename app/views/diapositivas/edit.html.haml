@@ -1,7 +1,7 @@
-%h1 Editing diapositiva
+= page_title('Editando Banner')
 
-= render 'form'
+.row
+  .span12
 
-= link_to 'Show', @diapositiva
-\|
-= link_to 'Back', diapositivas_path
+    = link_to 'Cancelar', '', class: 'btn btn-default btn-left back-js'
+    = render 'form'

@@ -1,25 +1,17 @@
-%h1 Listing diapositivas
+= page_title('Banners')
+
+- if current_admin
+  .admin-links-top
+    = link_to 'Nuevo  Banner', new_diapositiva_path, class: 'btn btn-default'
+
+.row
+  .span12
 
 %table
-  %tr
-    %th Titulo
-    %th Descripcion
-    %th Imagen
-    %th Slug
-    %th
-    %th
-    %th
-
   - @diapositivas.each do |diapositiva|
     %tr
       %td= diapositiva.titulo
       %td= diapositiva.descripcion
-      %td= diapositiva.imagen
-      %td= diapositiva.slug
-      %td= link_to 'Show', diapositiva
-      %td= link_to 'Edit', edit_diapositiva_path(diapositiva)
-      %td= link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Diapositiva', new_diapositiva_path
+      %td= image_tag diapositiva.imagen_url(:thumb)
+      %td= link_to 'Editar', edit_diapositiva_path(diapositiva), class: 'btn btn-default'
+      %td= link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'btn btn-default'

@@ -1,5 +1,7 @@
-%h1 New diapositiva
+= page_title('Nuevo Banner')
 
-= render 'form'
+.row
+  .span12
 
-= link_to 'Back', diapositivas_path
+    = link_to 'Cancelar', '', class: 'btn btn-default btn-left back-js'
+    = render 'form'

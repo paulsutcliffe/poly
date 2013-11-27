@@ -12,7 +12,21 @@
       = link_to_unless_current 'Productos', categorias_path do
         %span
           Productos
-    %li.last
-      = link_to_unless_current 'Contacto', new_contacto_path do
-        %span
-          Contacto
+    - if current_admin
+      %li
+        = link_to_unless_current 'Banners', diapositivas_path do
+          %span
+            Banners
+      %li
+        = link_to_unless_current 'Mensajes', contactos_path do
+          %span
+            Mensajes
+      %li.last
+        = link_to_unless_current 'Cerrar Sesión', destroy_admin_session_path, method: :delete do
+          %span
+            Cerrar Sesión
+    - else
+      %li.last
+        = link_to_unless_current 'Contacto', new_contacto_path do
+          %span
+            Contacto
