@@ -4,26 +4,27 @@
     = render 'bootstrap_slider.html'
 .row
   .span9
-    %ul.thumbnails.custom-thumbnails
-      %li.span3
-        = link_to image_tag('img-home-nosotros.jpg'), '', class: 'thumbnail'
-        %h3.title Nosotros
-        %p.text-center= raw(@texto_de_inicio.nosotros)
+    - if @texto_de_inicio
+      %ul.thumbnails.custom-thumbnails
+        %li.span3
+          = link_to image_tag('img-home-nosotros.jpg'), '', class: 'thumbnail'
+          %h3.title Nosotros
+          %p.text-center= raw(@texto_de_inicio.nosotros)
 
-      %li.span3
-        = link_to image_tag('img-home-productos.jpg'), '', class: 'thumbnail'
-        %h3.title Productos
-        %p.text-center= raw(@texto_de_inicio.productos)
+        %li.span3
+          = link_to image_tag('img-home-productos.jpg'), '', class: 'thumbnail'
+          %h3.title Productos
+          %p.text-center= raw(@texto_de_inicio.productos)
 
-      %li.span3
-        = link_to image_tag('img-home-contacto.jpg'), '', class: 'thumbnail'
-        %h3.title Contacto
-        %p.text-center= raw(@texto_de_inicio.contactos)
+        %li.span3
+          = link_to image_tag('img-home-contacto.jpg'), '', class: 'thumbnail'
+          %h3.title Contacto
+          %p.text-center= raw(@texto_de_inicio.contactos)
 
-    %h4.media-heading
-      = @texto_de_inicio.titulo
-    %p
-      = @texto_de_inicio.contenido
+      %h4.media-heading
+        = @texto_de_inicio.titulo
+      %p
+        = @texto_de_inicio.contenido
     - if current_admin
       = link_to 'Editar Contenidos', inicio_editar_texto_de_inicio_path, class: 'btn btn-default'
   .span3
