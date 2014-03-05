@@ -12,6 +12,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'tipo', 'tipos'
   inflect.irregular 'vendedor', 'vendedores'
   inflect.irregular 'coleccion', 'colecciones'
+  inflect.irregular 'informacion', 'informaciones'
 #   inflect.uncountable %w( fish sheep )
 end
 #

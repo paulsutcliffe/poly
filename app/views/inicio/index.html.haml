@@ -2,54 +2,30 @@
 .row
   .span12
     = render 'bootstrap_slider.html'
-
 .row
   .span9
     %ul.thumbnails.custom-thumbnails
       %li.span3
         = link_to image_tag('img-home-nosotros.jpg'), '', class: 'thumbnail'
         %h3.title Nosotros
-        %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+        %p.text-center= raw(@texto_de_inicio.nosotros)
 
       %li.span3
         = link_to image_tag('img-home-productos.jpg'), '', class: 'thumbnail'
         %h3.title Productos
-        %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+        %p.text-center= raw(@texto_de_inicio.productos)
 
       %li.span3
         = link_to image_tag('img-home-contacto.jpg'), '', class: 'thumbnail'
         %h3.title Contacto
-        %p.text-center Somos una empresa que lidera en el mercado desde hace 25 años.
+        %p.text-center= raw(@texto_de_inicio.contactos)
 
     %h4.media-heading
-      INTRODUCCIÓN DE LA EMPRESA
+      = @texto_de_inicio.titulo
     %p
-      Somos una empresa dedicada a la elaboración de productos plásticos para la
-
-      industria promocional, textil y del calzado con más de 20 años de experiencia
-
-      en el mercado, durante los cuales hemos aportado al crecimiento de nuestros
-
-      clientes brindándoles productos novedosos y de alta calidad, entre los que
-
-      podemos mencionar las etiquetas de goma, los botones de goma, los pullers
-
-      plásticos, llaveros promocionales y últimamente productos metálicos como
-
-      placas y botones entre otros.
-
-      Para esto contamos con una selecto staff de profesionales capacitados para
-
-      el asesoramiento a nuestros clientes, los cuales brindan un servicio de alto
-
-      nivel, volcando sus conocimientos a atender las necesidades que el mercado
-
-      requiere. Además contamos también con el respaldo de haber realizado
-
-      trabajos con importantes empresas del rubro y una cartera de clientes muy
-
-      reconocida.
-
+      = @texto_de_inicio.contenido
+    - if current_admin
+      = link_to 'Editar Contenidos', inicio_editar_texto_de_inicio_path, class: 'btn btn-default'
   .span3
     .sidebar-nav
       %h3.title Actualizaciones

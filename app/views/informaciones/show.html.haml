@@ -1,0 +1,21 @@
+= page_title('informacion')
+
+.row
+  .span12
+
+    = link_to 'Atrás', '', class: 'btn btn-default btn-left back-js'
+
+    - if current_admin
+      = link_to 'Editar', edit_informacion_path(@informacion), class: 'btn btn-default'
+.row
+  .span6
+    %b Foto1:
+    = @informacion.foto1
+    %b Foto2:
+    = @informacion.foto2
+    %b Resenia:
+    = @informacion.resenia
+    %b Mision:
+    = @informacion.mision
+    %b Vision:
+    = @informacion.vision

@@ -1,0 +1,26 @@
+= form_for @informacion do |f|
+  - if @informacion.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@informacion.errors.count, "error")} en informacion"
+      %ul
+        - @informacion.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    .span3
+      .field
+        = f.label :foto1
+        = f.file_field :foto1
+      .field
+        = f.label :foto2
+        = f.file_field :foto2
+      .field
+        = f.label :resenia
+        = f.text_area :resenia
+      .field
+        = f.label :mision
+        = f.text_area :mision
+      .field
+        = f.label :vision
+        = f.text_area :vision
+      .actions
+        = f.submit 'Guardar', class: 'btn btn-default'
