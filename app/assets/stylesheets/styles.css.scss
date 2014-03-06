@@ -34,8 +34,7 @@ padding: 0 5px 0 20px; text-transform: uppercase; font-size: $size-4; line-heigh
   img.no-resp {width: auto}
   .well { background: $gray-light;}
    h3.title-block { background: $blue;}
-  .well img {width: auto}
-}
+  .well img {width: auto}}
 .thumbnail,
 a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
@@ -128,7 +127,7 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 
 #main-footer {
   .well {background: $gray;}
-  p {text-align: center; color: white; margin: 0}
+  p {text-align: center; color: white; margin: 0; width: 90%; display:inline-block;}
 }
 
 .row {margin-bottom: 10px}
@@ -155,6 +154,8 @@ a.thumbnail:hover, a.thumbnail:focus {border: 0; padding: 0}
 }
 
 #bottom-area .btn {float:left !important}
+
+.navbar .nav > li > a {margin-bottom: 18px; padding: 0 5px;}
 
 .control-wrapper {height: 58px; position: relative; background: $gray;
   .carousel-control {background: none; font-size: 90px; border: 0; color: white; opacity: 1}
@@ -262,4 +263,7 @@ p, .media-body {background: $gray-light; }
 .page-encabezado .media .media-body .well {padding: 40px;}
 
 
+#main-footer{
 
+
+}
