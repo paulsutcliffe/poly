@@ -1,6 +1,8 @@
 class ProductosController < InheritedResources::Base
   before_filter :encontrar_tipo
 
+  belongs_to :tipo
+
   def encontrar_tipo
     if params[:tipo_id]
       @tipo = Tipo.find(params[:tipo_id])
