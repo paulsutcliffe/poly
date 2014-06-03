@@ -1,5 +1,9 @@
 Poly::Application.routes.draw do
 
+  resources :informaciones
+  
+  match "/quienes-somos" => "informaciones#index", :as => 'quienes_somos', :via => :get
+
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
 
     resources :categorias do
@@ -21,6 +25,10 @@ Poly::Application.routes.draw do
     match "/quienes-somos" => "quienes_somos#index", :as => 'quienes_somos', :via => :get
 
     resources :diapositivas
+
+    get 'inicio/editar_texto_de_inicio'
+
+    put 'inicio/update_texto_de_inicio'
 
     root to: 'inicio#index'
 

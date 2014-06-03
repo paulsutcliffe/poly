@@ -1,0 +1,38 @@
+= page_title('Quiénes Somos')
+
+.row
+  .span12
+    - @informaciones.each do |informacion|
+      .row
+        .span6
+          = image_tag informacion.foto1_url(:regular)
+
+        .span6
+          %h4.media-heading
+            RESEÑA
+          .P
+            = informacion.resenia
+      .row
+        .span6
+          .media.media-mision
+            .pull-left
+              .icon-fake
+            .media-body
+              %h4.media-heading
+                Misión
+              %p
+                = informacion.mision
+         
+          .media.media-vision
+            .pull-left
+              .icon-fake
+            .media-body
+              %h4.media-heading
+                Visión
+              %p
+                = informacion.vision
+        .span6
+          = image_tag informacion.foto2_url(:regular)
+      .actions
+        - if current_admin
+          = link_to 'Editar', edit_informacion_path(informacion), class: 'btn btn-default'

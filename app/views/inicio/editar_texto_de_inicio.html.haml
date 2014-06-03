@@ -1,0 +1,34 @@
+= form_for @texto_de_inicio, url: inicio_update_texto_de_inicio_path, method: :put, html: { class: 'form-horizontal', role: 'form' } do |f|
+  - if @texto_de_inicio.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@texto_de_inicio.errors.count, "error")}"
+      %ul
+        - @texto_de_inicio.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    .col-sm-10
+      %h1.editar
+        Editar Texto
+
+  .form-group
+    = f.label :nosotros
+    .col-sm-10
+      = f.text_area :nosotros
+  .form-group
+    = f.label :productos
+    .col-sm-10
+      = f.text_area :productos
+  .form-group
+    = f.label :contactos
+    .col-sm-10
+      = f.text_area :contactos
+  .form-group
+    = f.label :titulo
+    .col-sm-10
+      = f.text_field :titulo
+  .form-group
+    = f.label :contenido
+    .col-sm-10
+      = f.text_area :contenido
+  .actions
+    = f.submit 'Guardar', class: 'btn btn-default'
