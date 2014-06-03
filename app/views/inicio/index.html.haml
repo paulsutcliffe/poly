@@ -7,17 +7,17 @@
     - if @texto_de_inicio
       %ul.thumbnails.custom-thumbnails
         %li.span3
-          = link_to image_tag('img-home-nosotros.jpg'), '', class: 'thumbnail'
+          = link_to image_tag('img-home-nosotros.jpg'), quienes_somos_path, class: 'thumbnail'
           %h3.title Nosotros
           %p.text-center= raw(@texto_de_inicio.nosotros)
 
         %li.span3
-          = link_to image_tag('img-home-productos.jpg'), '', class: 'thumbnail'
+          = link_to image_tag('img-home-productos.jpg'), categorias_path, class: 'thumbnail'
           %h3.title Productos
           %p.text-center= raw(@texto_de_inicio.productos)
 
         %li.span3
-          = link_to image_tag('img-home-contacto.jpg'), '', class: 'thumbnail'
+          = link_to image_tag('img-home-contacto.jpg'), new_contacto_path, class: 'thumbnail'
           %h3.title Contacto
           %p.text-center= raw(@texto_de_inicio.contactos)
 
