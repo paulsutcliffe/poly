@@ -4,24 +4,28 @@
 
 = page_title('Productos | ' + @tipo.subcategoria.categoria.nombre + ' | ' + @tipo.subcategoria.nombre + ' | ' + @tipo.nombre)
 
-- @productos.each_slice(3) do |producto|
+- indice = 0
+- @productos.each_slice(3) do |grupo|
   .row
-    - producto.each_with_index do |item, index|
+    - grupo.each_with_index do |producto, index|
+      - indice = indice + 1
       .span4
-        = link_to image_tag(item.imagen_url(:span4)), '#', :"data-toggle" => "modal", :"data-target" => "#myModal-" + index.to_s
+        = link_to image_tag(producto.imagen_url(:span4)), '#', :"data-toggle" => "modal", :"data-target" => "#myModal-" + indice.to_s
         %h3.title-block.colored.well
-          = paragraph(item.nombre)
+          = paragraph(producto.nombre)
         - if current_admin
           .well
             .actions
-              = link_to 'Editar', edit_tipo_producto_path(@tipo, item), class: 'btn btn-default'
-              = link_to 'Eliminar', tipo_producto_path(@tipo, item), :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
+              = link_to 'Editar', edit_tipo_producto_path(@tipo, producto), class: 'btn btn-default'
+              = link_to 'Eliminar', tipo_producto_path(@tipo, producto), :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-default'
 
-        %div{id: 'myModal-' + index.to_s, class: 'modal hide fade', tabindex: '-1', role: 'dialog', :"aria-labelledby" => 'myModalLabel', :"aria-hidden" => 'true'}
+        %div{id: 'myModal-' + indice.to_s, class: 'modal hide fade', tabindex: '-1', role: 'dialog', :"aria-labelledby" => 'myModalLabel', :"aria-hidden" => 'true'}
           .modal-header
             %button{:type => 'button', class: 'close', :"data-dismiss" => 'modal', :"aria-hidden" => 'true'}
               x
             .modal-body
-              = image_tag(item.imagen_url(:full))
+              = image_tag(producto.imagen_url(:full))
             .modal-footer
-              = item.nombre
+              = producto.nombre
+
+
