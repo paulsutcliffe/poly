@@ -1,10 +1,11 @@
 - if current_admin
   .admin-links-top
     = link_to 'Nuevo  Categoria', new_categoria_path, class: 'btn btn-default'
+    = link_to 'Editar', edit_infoproducto_path(1), class: 'btn btn-default'
 
 = page_title('Productos')
-= page_encabezado('Calidad y Eficiencia', '/assets/box-productos.jpg')
-%p Texto descriptivo
+= page_encabezado(@infoproducto.titulo, '/assets/box-productos.jpg')
+%p= @infoproducto.subtitulo
 = page_encabezado_end
 
 - @categorias.each_slice(2) do |categoria|

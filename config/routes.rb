@@ -1,5 +1,8 @@
 Poly::Application.routes.draw do
 
+  resources :infoproductos
+
+
   resources :informaciones
   
   match "/quienes-somos" => "informaciones#index", :as => 'quienes_somos', :via => :get
