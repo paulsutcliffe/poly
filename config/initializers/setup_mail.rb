@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "kosmyka.com",
-  :user_name            => "info@kosmyka.com",
-  :password             => "chimpance99",
+  :domain               => "gmail.com",
+  :user_name            => "mensajespoly@gmail.com",
+  :password             => "123456poly",
   :authentication       => :plain,
   :enable_starttls_auto => true
 }
