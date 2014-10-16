@@ -1,5 +1,13 @@
 = page_title('Contacto')
 
+- if notice
+  .alert-container
+    #alert.alert.alert-success
+      = link_to '*', '#', :"data-dismiss" => 'alert', :class => 'close'
+      %strong
+
+      = notice
+
 .row
   .span12
 
