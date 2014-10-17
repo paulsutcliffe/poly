@@ -4,7 +4,7 @@ Poly::Application.routes.draw do
 
 
   resources :informaciones
-  
+
   match "/quienes-somos" => "informaciones#index", :as => 'quienes_somos', :via => :get
 
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
@@ -34,6 +34,8 @@ Poly::Application.routes.draw do
     put 'inicio/update_texto_de_inicio'
 
     root to: 'inicio#index'
+
+    match "/cpanel" => redirect("http://cpanel.manufacturaspoly.com:2082"), :as => :cpanel
 
   end
 
